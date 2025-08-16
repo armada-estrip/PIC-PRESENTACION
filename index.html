@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico Parqueadero - Armada del Ecuador</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressBar"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <img src="https://pplx-res.cloudinary.com/image/upload/v1755292400/pplx_project_search_images/83abcbe53e461d3ebbbfaf633a9ddfffc63911d0.png" alt="Armada del Ecuador" class="nav-logo">
+                <div class="sidebar-progress">
+                    <span id="sectionProgress">1 / 10</span>
+                </div>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item active" data-section="inicio">
+                    <div class="nav-link">
+                        <span class="nav-icon">🏠</span>
+                        <span class="nav-text">Inicio</span>
+                    </div>
+                </li>
+                <li class="nav-item" data-section="resumen">
+                    <div class="nav-link">
+                        <span class="nav-icon">📋</span>
+                        <span class="nav-text">Resumen Ejecutivo</span>
+                    </div>
+                </li>
+                <li class="nav-item" data-section="introduccion">
+                    <div class="nav-link">
+                        <span class="nav-icon">📖</span>
+                        <span class="nav-text">Introducción</span>
+                    </div>
+                </li>
+                <li class="nav-item expandable">
+                    <div class="nav-link">
+                        <span class="nav-icon">🔍</span>
+                        <span class="nav-text">Análisis</span>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <ul class="sub-menu">
+                        <li class="sub-item" data-section="infraestructura">
+                            <div class="sub-link">Infraestructura Física</div>
+                        </li>
+                        <li class="sub-item" data-section="seguridad">
+                            <div class="sub-link">Seguridad</div>
+                        </li>
+                        <li class="sub-item" data-section="funcionalidad">
+                            <div class="sub-link">Funcionalidad</div>
+                        </li>
+                        <li class="sub-item" data-section="normativa">
+                            <div class="sub-link">Aplicación de Normativa</div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item" data-section="mejoramiento">
+                    <div class="nav-link">
+                        <span class="nav-icon">🚀</span>
+                        <span class="nav-text">Plan de Mejoramiento</span>
+                    </div>
+                </li>
+                <li class="nav-item" data-section="conclusiones">
+                    <div class="nav-link">
+                        <span class="nav-icon">✅</span>
+                        <span class="nav-text">Conclusiones</span>
+                    </div>
+                </li>
+                <li class="nav-item" data-section="referencias">
+                    <div class="nav-link">
+                        <span class="nav-icon">📚</span>
+                        <span class="nav-text">Referencias</span>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- Search Box -->
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Buscar contenido..." class="form-control">
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Inicio Section -->
+            <section id="inicio" class="content-section active">
+                <div class="hero-section">
+                    <div class="hero-content">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1755292400/pplx_project_search_images/83abcbe53e461d3ebbbfaf633a9ddfffc63911d0.png" alt="Armada del Ecuador" class="hero-logo">
+                        <h1 class="hero-title">DIAGNÓSTICO Y MEJORAMIENTO INTEGRAL DEL PARQUEADERO</h1>
+                        <h2 class="hero-subtitle">DE LA ESCUELA DE PERFECCIONAMIENTO DE TRIPULANTES</h2>
+                        <p class="hero-focus">ENFOQUE EN INFRAESTRUCTURA, SEGURIDAD Y FUNCIONALIDAD</p>
+                        
+                        <div class="institutional-info">
+                            <div class="info-card">
+                                <h3>ARMADA DEL ECUADOR</h3>
+                                <p>ESCUELA DE PERFECCIONAMIENTO DE TRIPULANTES</p>
+                                <p class="subtitle">SUBP. GERARDO RAYMUNDO RAMÍREZ</p>
+                            </div>
+                            <div class="course-info">
+                                <p><strong>Curso:</strong> CBOP A SGOS</p>
+                                <p><strong>Promoción:</strong> 70/71</p>
+                                <p><strong>Ubicación:</strong> GUAYAQUIL</p>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn--primary btn--lg" id="startPresentation">
+                            Iniciar Presentación
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resumen Ejecutivo Section -->
+            <section id="resumen" class="content-section">
+                <div class="section-header">
+                    <h2>Resumen Ejecutivo</h2>
+                    <div class="section-breadcrumb">
+                        <span class="breadcrumb-link" data-section="inicio">Inicio</span> > 
+                        <span class="current-section">Resumen Ejecutivo</span>
+                    </div>
+                </div>
+                
+                <div class="content-grid">
+                    <div class="stat-card">
+                        <h3>Capacidad Actual</h3>
+                        <div class="stat-number">100</div>
+                        <p>vehículos (uso real: 75)</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Capacidad Optimizada</h3>
+                        <div class="stat-number">140</div>
+                        <p>vehículos (+87% incremento)</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Tiempo de Maniobra</h3>
+                        <div class="stat-number">5 min</div>
+                        <p>actual → objetivo: &lt;3 min</p>
+                    </div>
+                </div>
+
+                <div class="problem-overview">
+                    <h3>Problemas Principales Identificados</h3>
+                    <div class="problem-grid">
+                        <div class="problem-item">
+                            <span class="problem-icon">🛣️</span>
+                            <div>
+                                <h4>Pavimento Irregular</h4>
+                                <p>30% asfalto en buen estado, 60% asfalto no refinado, 10% tierra con desniveles de hasta 5 cm</p>
+                            </div>
+                        </div>
+                        <div class="problem-item">
+                            <span class="problem-icon">🚫</span>
+                            <div>
+                                <h4>Ausencia de Señalización</h4>
+                                <p>0% de señalización horizontal y vertical, sin demarcación de espacios de estacionamiento</p>
+                            </div>
+                        </div>
+                        <div class="problem-item">
+                            <span class="problem-icon">💧</span>
+                            <div>
+                                <h4>Drenaje Deficiente</h4>
+                                <p>Sistema básico e insuficiente, 25% del área afectada por formación de lodo en lluvias</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Introducción Section -->
+            <section id="introduccion" class="content-section">
+                <div class="section-header">
+                    <h2>Introducción</h2>
+                    <div class="section-breadcrumb">
+                        <span class="breadcrumb-link" data-section="inicio">Inicio</span> > 
+                        <span class="current-section">Introducción</span>
+                    </div>
+                </div>
+                
+                <div class="intro-content">
+                    <div class="intro-text">
+                        <h3>Contexto del Proyecto</h3>
+                        <p>La Escuela de Perfeccionamiento de Tripulantes de la Armada del Ecuador cuenta con un parqueadero de <strong>7,500 m²</strong> que presenta deficiencias críticas en su infraestructura, seguridad y funcionalidad, afectando la eficiencia operacional y la imagen institucional.</p>
+                        
+                        <h3>Objetivos del Diagnóstico</h3>
+                        <ul>
+                            <li>Evaluar integralmente el estado actual de la infraestructura física del parqueadero</li>
+                            <li>Identificar y categorizar riesgos de seguridad para usuarios</li>
+                            <li>Analizar la eficiencia operacional y flujos vehiculares</li>
+                            <li>Verificar el cumplimiento de normativas INEN vigentes</li>
+                            <li>Proponer soluciones técnicas integrales de mejoramiento</li>
+                        </ul>
+
+                        <h3>Metodología Aplicada</h3>
+                        <p>Se ejecutó un estudio técnico integral que incluyó:</p>
+                        <ul>
+                            <li>Inspección visual directa y sistemática del área</li>
+                            <li>Mediciones topográficas con instrumentos calibrados</li>
+                            <li>Encuestas estructuradas a 30 usuarios regulares</li>
+                            <li>Análisis de flujos vehiculares en diferentes horarios</li>
+                            <li>Revisión documental de normativas aplicables</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="intro-visual">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1755320831/pplx_project_search_images/d97962bfaff4365e2a51727607c5831d51e7eb5b.png" alt="Plano arquitectónico de parqueadero" class="intro-image">
+                        <p class="image-caption">Plano arquitectónico de referencia para diseño optimizado de parqueaderos</p>
+                        
+                        <div class="project-stats">
+                            <h4>Datos del Proyecto</h4>
+                            <div class="stat-item">
+                                <span>Área total:</span>
+                                <span>7,500 m²</span>
+                            </div>
+                            <div class="stat-item">
+                                <span>Precipitación anual:</span>
+                                <span>1,200 mm</span>
+                            </div>
+                            <div class="stat-item">
+                                <span>Usuarios diarios:</span>
+                                <span>~80 personas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Análisis - Infraestructura Section -->
+            <section id="infraestructura" class="content-section">
+                <div class="section-header">
+                    <h2>Análisis - Infraestructura Física</h2>
+                    <div class="section-breadcrumb">
+                        <span class="breadcrumb-link" data-section="inicio">Inicio</span> > 
+                        <span class="breadcrumb-link" data-section="analisis">Análisis</span> > 
+                        <span class="current-section">Infraestructura</span>
+                    </div>
+                </div>
+                
+                <div class="analysis-content">
+                    <div class="chart-container" style="position: relative; height: 300px;">
+                        <canvas id="pavimentChart"></canvas>
+                    </div>
+                    
+                    <div class="infrastructure-details">
+                        <h3>Estado Actual del Pavimento</h3>
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <span class="detail-label">Asfalto en buen estado:</span>
+                                <span class="detail-value">30%</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Asfalto no refinado:</span>
+                                <span class="detail-value">60%</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Superficie de tierra:</span>
+                                <span class="detail-value">10%</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Desniveles máximos:</span>
+                                <span class="detail-value">5 cm</span>
+                            </div>
+                        </div>
+
+                        <h3>Deficiencias Críticas Identificadas</h3>
+                        <ul class="problem-list">
+                            <li>Desniveles de hasta 5 cm que generan incomodidad y riesgo vehicular</li>
+                            <li>Sistema de drenaje básico e insuficiente para precipitación de 1,200 mm anuales</li>
+                            <li>Ausencia total de señalización horizontal y vertical</li>
+                            <li>Formación de charcos y lodo en temporada lluviosa</li>
+                            <li>Deterioro progresivo del pavimento existente</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Análisis - Seguridad Section -->
+            <section id="seguridad" class="content-section">
+                <div class="section-header">
+                    <h2>Análisis - Seguridad</h2>
+                    <div class="section-breadcrumb">
+                        <span class="breadcrumb-link" data-section="inicio">Inicio</span> > 
+                        <span class="breadcrumb-link" data-section="analisis">Análisis</span> > 
+                        <span class="current-section">Seguridad</span>
+                    </div>
+                </div>
+                
+                <div class="security-analysis">
+                    <div class="risk-cards">
+                        <div class="risk-card high">
+                            <h3>Riesgos Físicos</h3>
+                            <ul>
+                                <li>Baches y pavimento irregular</li>
+                                <li>Formación de lodo en temporada lluviosa</li>
+                                <li>Desniveles peligrosos para motociclistas</li>
+                                <li>Ausencia de drenaje adecuado</li>
+                            </ul>
+                            <div class="risk-level">RIESGO ALTO</div>
+                        </div>
+                        
+                        <div class="risk-card medium">
+                            <h3>Control y Vigilancia</h3>
+                            <ul>
+                                <li>Control de accesos inexistente</li>
+                                <li>Falta de sistemas de vigilancia</li>
+                                <li>Ausencia de pasillos peatonales</li>
+                                <li>Iluminación insuficiente</li>
+                            </ul>
+                            <div class="risk-level">RIESGO MEDIO</div>
+                        </div>
+                    </div>
+                    
+                    <div class="security-stats">
+                        <h3>Estadísticas de Seguridad</h3>
+                        <div class="stat-grid">
+                            <div class="stat-item">
+                                <span class="stat-number">5</span>
+                                <span class="stat-label">Incidentes anuales reportados</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">25%</span>
+                                <span class="stat-label">Área afectada por lodo</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">0</span>
+                                <span class="stat-label">Sistemas de vigilancia activos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Análisis - Funcionalidad Section -->
+            <section id="funcionalidad" class="content-section">
+                <div class="section-header">
+                    <h2>Análisis - Funcionalidad</h2>
+                    <div class="section-breadcrumb">
+                        <span class="breadcrumb-link" data-section="inicio">Inicio</span> > 
+                        <span class="breadcrumb-link" data-section="analisis">Análisis</span> > 
+                        <span class="current-section">Funcionalidad</span>
+                    </div>
+                </div>
+                
+                <div class="functionality-content">
+                    <div class="chart-container" style="position: relative; height: 300px;">
+                        <canvas id="flowChart"></canvas>
+                    </div>
+                    
+                    <div class="survey-results">
+                        <h3>Resultados de Encuesta a 30 Usuarios</h3>
+                        <div class="survey-grid">
+                            <div class="survey-item">
+                                <span class="survey-percentage">84%</span>
+                                <span class="survey-label">Insatisfacción con estado del pavimento</span>
+                            </div>
+                            <div class="survey-item">
+                                <span class="survey-percentage">78%</span>
+                                <span class="survey-label">Considera prioritaria la señalización</span>
+                            </div>
+                            <div class="survey-item">
+                                <span class="survey-percentage">35%</span>
+                                <span class="survey-label">Ha modificado horarios por problemas</span>
+                            </div>
+                        </div>
+                        
+                        <div class="user-distribution">
+                            <h4>Distribución de Usuarios Encuestados</h4>
+                            <div class="user-stats">
+                                <span>👥 20 conductores de automóviles</span>
+                                <span>🏍️ 10 motociclistas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="peak-hours">
+                        <h3>Análisis de Flujo Vehicular</h3>
+                        <div class="flow-details">
+                            <div class="flow-item">
+                                <h4>Horario Pico de Entrada</h4>
+                                <p><strong>07:00 - 07:30</strong></p>
+                                <p>60 automóviles + 20 motocicletas</p>
+                                <p>Tiempo promedio de maniobra: 5 minutos</p>
+                            </div>
+                            <div class="flow-item">
+                                <h4>Horario Pico de Salida</h4>
+                                <p><strong>17:00 - 17:30</strong></p>
+                                <p>Congestión significativa</p>
+                                <p>Eficiencia reducida por falta de señalización</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Análisis - Normativa Section -->
+            <section id="normativa" class="content-section">
+                <div class="section-header">
+                    <h2>Aplicación de Normativa</h2>
+                    <div class="section-breadcrumb">
+                        <span class="breadcrumb-link" data-section="inicio">Inicio</span> > 
+                        <span class="breadcrumb-link" data-section="analisis">Análisis</span> > 
+                        <span class="current-section">Normativa</span>
+                    </div>
+                </div>
+                
+                <div class="normative-content">
+                    <h3>Evaluación de Cumplimiento - Normativa INEN 2248</h3>
+                    <div class="compliance-grid">
+                        <div class="compliance-item non-compliant">
+                            <div>
+                                <h4>Señalización Vial</h4>
+                                <p>Ausencia total de líneas de demarcación, señalización vertical y espacios definidos</p>
+                            </div>
+                            <span class="compliance-status">100% INCUMPLIMIENTO</span>
+                        </div>
+                        <div class="compliance-item non-compliant">
+                            <div>
+                                <h4>Pavimentación</h4>
+                                <p>Pavimento irregular, materiales inadecuados y falta de uniformidad</p>
+                            </div>
+                            <span class="compliance-status">70% INCUMPLIMIENTO</span>
+                        </div>
+                        <div class="compliance-item non-compliant">
+                            <div>
+                                <h4>Accesibilidad Universal</h4>
+                                <p>Sin plazas reservadas para personas con discapacidad ni accesos adaptados</p>
+                            </div>
+                            <span class="compliance-status">100% INCUMPLIMIENTO</span>
+                        </div>
+                        <div class="compliance-item non-compliant">
+                            <div>
+                                <h4>Sostenibilidad</h4>
+                                <p>Ausencia de infraestructura para vehículos eléctricos</p>
+                            </div>
+                            <span class="compliance-status">100% INCUMPLIMIENTO</span>
+                        </div>
+                    </div>
+
+                    <h3>Requisitos Normativos INEN 2248</h3>
+                    <div class="requirements">
+                        <ul>
+                            <li><strong>Dimensiones mínimas de plaza:</strong> 2.4m × 5.0m</li>
+                            <li><strong>Franja de circulación:</strong> 5.0m perpendicular a las plazas</li>
+                            <li><strong>Líneas de demarcación:</strong> 100mm ancho mínimo, color blanco</li>
+                            <li><strong>Accesibilidad universal:</strong> Mínimo 2% plazas reservadas</li>
+                            <li><strong>Velocidad máxima:</strong> 10 km/h en áreas de estacionamiento</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Plan de Mejoramiento Section -->
+            <section id="mejoramiento" class="content-section">
+                <div class="section-header">
+                    <h2>Plan de Mejoramiento Integral</h2>
+                    <div class="section-breadcrumb">
+                        <span class="breadcrumb-link" data-section="inicio">Inicio</span> > 
+                        <span class="current-section">Plan de Mejoramiento</span>
+                    </div>
+                </div>
+                
+                <div class="improvement-plan">
+                    <div class="plan-overview">
+                        <div class="plan-card">
+                            <h3>🏗️ Pavimentación</h3>
+                            <ul>
+                                <li>Concreto con resistencia 280 kg/cm²</li>
+                                <li>Base granular compactada de 20 cm</li>
+                                <li>Losa de concreto de 18 cm de espesor</li>
+                                <li>Juntas de dilatación cada 6 metros</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="plan-card">
+                            <h3>🌊 Sistema de Drenaje</h3>
+                            <ul>
+                                <li>Bordillos de concreto 15 cm altura</li>
+                                <li>Cunetas con sección triangular</li>
+                                <li>Sumideros cada 50 metros</li>
+                                <li>Tuberías PVC 200 mm diámetro</li>
+                                <li>Pendiente longitudinal 2%</li>
+                            </ul>
+                        </div>
+
+                        <div class="plan-card">
+                            <h3>🚗 Señalización Integral</h3>
+                            <ul>
+                                <li>140 plazas dimensiones 2.4m × 5.0m</li>
+                                <li>Líneas blancas 100 mm ancho</li>
+                                <li>Carriles de circulación 5.0 m</li>
+                                <li>3 plazas para personas con discapacidad</li>
+                                <li>Señalización vertical informativa</li>
+                            </ul>
+                        </div>
+
+                        <div class="plan-card">
+                            <h3>🔒 Seguridad y Vigilancia</h3>
+                            <ul>
+                                <li>8 cámaras HD con visión nocturna</li>
+                                <li>Sistema de almacenamiento 30 días</li>
+                                <li>Control de accesos automatizado</li>
+                                <li>Iluminación LED perimetral</li>
+                            </ul>
+                        </div>
+
+                        <div class="plan-card">
+                            <h3>⚡ Sostenibilidad</h3>
+                            <ul>
+                                <li>2 puntos de carga para vehículos eléctricos</li>
+                                <li>Conectores estándar 110V y 220V</li>
+                                <li>Preparación para expansión futura</li>
+                                <li>Materiales eco-amigables</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="comparison-chart">
+                        <h3>Comparación: Situación Actual vs Mejoramiento</h3>
+                        <div class="chart-container" style="position: relative; height: 300px;">
+                            <canvas id="comparisonChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Conclusiones Section -->
+            <section id="conclusiones" class="content-section">
+                <div class="section-header">
+                    <h2>Conclusiones y Beneficios Esperados</h2>
+                    <div class="section-breadcrumb">
+                        <span class="breadcrumb-link" data-section="inicio">Inicio</span> > 
+                        <span class="current-section">Conclusiones</span>
+                    </div>
+                </div>
+                
+                <div class="conclusions">
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <span class="benefit-icon">📈</span>
+                            <h3>Incremento de Capacidad</h3>
+                            <p class="benefit-stat">+87%</p>
+                            <p>De 75 a 140 vehículos<br>Optimización del espacio disponible</p>
+                        </div>
+                        
+                        <div class="benefit-card">
+                            <span class="benefit-icon">⚡</span>
+                            <h3>Reducción Tiempo Maniobra</h3>
+                            <p class="benefit-stat">-40%</p>
+                            <p>De 5 minutos a menos de 3<br>Mayor eficiencia operacional</p>
+                        </div>
+                        
+                        <div class="benefit-card">
+                            <span class="benefit-icon">🛡️</span>
+                            <h3>Eliminación de Riesgos</h3>
+                            <p class="benefit-stat">100%</p>
+                            <p>Eliminación de riesgos de lodo<br>Superficie uniforme y segura</p>
+                        </div>
+                        
+                        <div class="benefit-card">
+                            <span class="benefit-icon">✅</span>
+                            <h3>Cumplimiento Normativo</h3>
+                            <p class="benefit-stat">100%</p>
+                            <p>Cumplimiento total INEN 2248<br>Estándares internacionales</p>
+                        </div>
+                    </div>
+
+                    <div class="final-recommendations">
+                        <h3>Recomendaciones Estratégicas</h3>
+                        <ol>
+                            <li><strong>Implementación integral:</strong> Ejecutar el plan de mejoramiento de forma completa y coordinada</li>
+                            <li><strong>Mantenimiento preventivo:</strong> Establecer cronograma de inspección y mantenimiento periódico</li>
+                            <li><strong>Capacitación del personal:</strong> Entrenar al personal en el uso de nuevas instalaciones y sistemas</li>
+                            <li><strong>Monitoreo continuo:</strong> Evaluar periódicamente la satisfacción de usuarios y eficiencia operacional</li>
+                            <li><strong>Expansión futura:</strong> Considerar crecimiento de demanda y tecnologías emergentes</li>
+                        </ol>
+                    </div>
+
+                    <div class="institutional-impact">
+                        <h3>Impacto Institucional Proyectado</h3>
+                        <p>La inversión propuesta es <strong>técnicamente viable y económicamente justificable</strong>, generando un fortalecimiento significativo de la imagen institucional de la Armada del Ecuador. Se proyecta una mejora sustancial en las condiciones de trabajo del personal, incremento en la satisfacción de usuarios, y posicionamiento como referente en infraestructura naval moderna y sostenible.</p>
+                        
+                        <div class="impact-metrics">
+                            <div class="metric">
+                                <span class="metric-label">Satisfacción de usuarios:</span>
+                                <span class="metric-value">Proyectada >95%</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Reducción de incidentes:</span>
+                                <span class="metric-value">Estimada 90%</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Vida útil del proyecto:</span>
+                                <span class="metric-value">25+ años</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Referencias Section -->
+            <section id="referencias" class="content-section">
+                <div class="section-header">
+                    <h2>Referencias y Bibliografía</h2>
+                    <div class="section-breadcrumb">
+                        <span class="breadcrumb-link" data-section="inicio">Inicio</span> > 
+                        <span class="current-section">Referencias</span>
+                    </div>
+                </div>
+                
+                <div class="references">
+                    <h3>Normativas Técnicas Aplicadas</h3>
+                    <ul class="reference-list">
+                        <li><strong>INEN 2248:2016</strong> - Accesibilidad de las personas al medio físico. Estacionamientos</li>
+                        <li><strong>INEN 004-1:2011</strong> - Señalización vial. Parte 1: Señalización horizontal</li>
+                        <li><strong>INEN 004-2:2011</strong> - Señalización vial. Parte 2: Señalización vertical</li>
+                        <li><strong>NEC-SE-DS:2015</strong> - Código Ecuatoriano de la Construcción - Requisitos de pavimentación</li>
+                    </ul>
+
+                    <h3>Referencias Técnicas Especializadas</h3>
+                    <ul class="reference-list">
+                        <li>Manual de Diseño Geométrico de Carreteras - MTOP Ecuador (2013)</li>
+                        <li>Especificaciones Técnicas para Construcción de Pavimentos Rígidos - INEN (2018)</li>
+                        <li>Normativa de Seguridad y Salud en el Trabajo - IESS Ecuador (2020)</li>
+                        <li>Guía de Diseño Sostenible para Estacionamientos - Consejo Verde (2019)</li>
+                        <li>Estándares Internacionales ISO 14001 - Gestión Ambiental</li>
+                    </ul>
+
+                    <h3>Metodología de Investigación Aplicada</h3>
+                    <ul class="reference-list">
+                        <li>Inspección visual sistemática del área de estudio con registro fotográfico</li>
+                        <li>Mediciones topográficas con estación total y GPS diferencial</li>
+                        <li>Encuestas estructuradas aplicadas a 30 usuarios regulares del parqueadero</li>
+                        <li>Análisis estadístico de flujo vehicular en horarios pico y normales</li>
+                        <li>Revisión documental exhaustiva de normativas nacionales e internacionales</li>
+                        <li>Consulta con expertos en ingeniería civil y diseño vial</li>
+                    </ul>
+
+                    <div class="study-credits">
+                        <h3>Créditos del Estudio</h3>
+                        <p><strong>Institución:</strong> Armada del Ecuador - Escuela de Perfeccionamiento de Tripulantes</p>
+                        <p><strong>Curso:</strong> CBOP A SGOS - Promoción 70/71</p>
+                        <p><strong>Ubicación:</strong> Guayaquil, Ecuador</p>
+                        <p><strong>Año de estudio:</strong> 2024</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Navigation Controls -->
+    <div class="nav-controls">
+        <button class="btn btn--secondary" id="prevBtn" title="Sección anterior">
+            ← Anterior
+        </button>
+        <button class="btn btn--secondary" id="fullscreenBtn" title="Activar pantalla completa">
+            🔳 Pantalla Completa
+        </button>
+        <button class="btn btn--primary" id="nextBtn" title="Siguiente sección">
+            Siguiente →
+        </button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
