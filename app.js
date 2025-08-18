@@ -362,7 +362,7 @@ function createFlowChart() {
     charts.flow = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['Entrada (07:00-07:30)', 'Salida (17:00-17:30)'],
+        labels: ['Entrada (06:00-06:30)', 'Salida (17:00-17:30)'],
         datasets: [
           {
             label: 'Automóviles',
